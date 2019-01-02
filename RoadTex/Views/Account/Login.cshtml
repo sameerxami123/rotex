@@ -1,0 +1,13 @@
+﻿@model AspNetWebApplication.Models.LoginModel
+<h1>Login</h1>
+<hr />
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    @Html.ValidationSummary();
+    @Html.LabelFor(x => x.Username) @Html.TextBoxFor(x => x.Username)
+    @Html.LabelFor(x => x.Password) @Html.TextBoxFor(x => x.Password)
+    <br />
+    <input class="btn" type="submit" value"Login" />
+}
+

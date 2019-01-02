@@ -1,0 +1,24 @@
+﻿@model AspNetWebApplication.Models.RegisterModel
+<h1>Registration</h1>
+<hr />
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.ValidationSummary();
+    @Html.LabelFor(x => x.Username) @Html.TextBoxFor(x => x.Username)
+    @Html.LabelFor(x => x.Email) @Html.TextBoxFor(x => x.Email)
+    @Html.LabelFor(x => x.FirstName) @Html.TextBoxFor(x => x.FirstName)
+    @Html.LabelFor(x => x.LastName) @Html.TextBoxFor(x => x.LastName)
+    @Html.LabelFor(x => x.Password) @Html.TextBoxFor(x => x.Password)
+
+
+    @Html.LabelFor(x => x.Role) 
+    @Html.DropDownListFor(x=>x.Role, (SelectList)ViewBag.Name, " ")
+
+    @Html.LabelFor(x=>x.IsSalesRep) @Html.CheckBoxFor(x=>x.IsSalesRep)
+    @Html.LabelFor(x=>x.IsPreprer) @Html.CheckBoxFor(x=>x.IsPreprer)
+
+
+    <br />
+    <input class="btn" type="submit" value"Register" />
+}
